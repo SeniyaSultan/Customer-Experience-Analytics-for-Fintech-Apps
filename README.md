@@ -43,52 +43,56 @@ project/
 
 ---
 
-## 🧹 Preprocessing Steps
+## 🚀 Project Tasks Completed
 
-Key steps used before modeling:
+### ✅ Task 1: Data Collection & Preprocessing
+- Scraped 1200+ reviews from Google Play Store
+- Preprocessed: removed duplicates, handled missing values, normalized dates
+- Saved as CSV with columns: `review_text`, `rating`, `review_date`, `bank`, `source`
 
-1. **Clean Headlines**
+### ✅ Task 2: Sentiment & Thematic Analysis
+- Implemented sentiment analysis using `distilbert-base-uncased-finetuned-sst-2-english`
+- Computed sentiment scores (positive/negative/neutral)
+- Extracted keywords using TF-IDF
+- Identified 3-5 themes per bank:
+  - Account Access Issues
+  - Transaction Performance  
+  - User Interface & Experience
+  - Customer Support
+  - Feature Requests
 
-   - Removed punctuation, HTML, emojis
-   - Tokenization + stopword removal
-   - Lemmatization
+### ✅ Task 3: PostgreSQL Database (Coming Soon)
+- Database design with `banks` and `reviews` tables
+- Schema for storing processed review data
+- Python scripts for data insertion
 
-2. **Sentiment Extraction**
-
-   - Using `[VADER / TextBlob / RoBERTa]`
-   - Computed:
-
-     - compound score
-     - pos / neg / neu
-
-3. **Feature Engineering**
-
-   - Daily return calculation
-   - Moving averages
-   - RSI, MACD (optional)
-   - Merging sentiment + price data
-
----
-
-## 📈 Analysis Highlights
-
-Some insights included in the notebook:
-
-- Correlation between sentiment & next-day returns
-- Sentiment patterns during volatile periods
-- Return distributions
-- Simple baseline model for up/down prediction
-
----
+### ✅ Task 4: Insights & Visualization (Coming Soon)
+- Sentiment trends analysis
+- Rating distributions
+- Word clouds for each bank
+- Actionable recommendations
 
 ## 🛠️ Tech Stack
+- **Python**: Pandas, NumPy, Matplotlib, Seaborn
+- **Web Scraping**: google-play-scraper
+- **NLP**: HuggingFace Transformers, spaCy, NLTK
+- **Database**: PostgreSQL, psycopg2
+- **Visualization**: Plotly, WordCloud
 
-- **Python** (Pandas, NumPy, Scikit-Learn)
-- **NLTK / HuggingFace** for sentiment
-- **Matplotlib / Seaborn** for visuals
-- **PostgreSQL** for querying and storing processed data
+## 📈 Key Insights (Preliminary)
+1. **CBE**: High ratings (4.2) but complaints about slow transfers
+2. **BOA**: Lower ratings (3.4) with login issues as major pain point
+3. **Dashen**: Good ratings (4.1) with positive feedback on UI but occasional crashes
 
----
+## ▶️ How to Run
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/SeniyaSultan/Customer-Experience-Analytics-for-Fintech-Apps.git
+cd Customer-Experience-Analytics-for-Fintech-Apps
+
+
+
 
 ## ▶️ How to Run
 
@@ -121,3 +125,4 @@ notebooks/Sentiment_demo.ipynb
 If you want to collaborate or improve the project, feel free to open a PR or reach out!
 
 Happy coding 🚀
+
